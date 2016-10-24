@@ -78,11 +78,14 @@ static NSString *const kActionTarget = @"buttonActionTarget";
 @property(nonatomic) UIColor *toolbarBackgroundColor;
 @property(nonatomic, strong) UIColor *toolbarButtonsColor;
 @property(nonatomic) NSNumber *pickerBlurRadius;
-@property(nonatomic) UIColor *presentationViewBackgroundColor;
 @property(nonatomic, retain) Class popoverBackgroundViewClass; //allow popover customization on iPad
 @property(nonatomic) UIInterfaceOrientationMask supportedInterfaceOrientations; // You can set your own supportedInterfaceOrientations value to prevent dismissing picker in some special cases.
 @property(nonatomic) TapAction tapDismissAction; // Specify, which action should be fired in case of tapping outside of the picker (on top darkened side). Default is TapActionNone.
 @property(nonatomic) BOOL popoverDisabled; // Disable popover behavior on iPad
+
+// Allows the user to decide whether to imitate a modal transition
+// (black, 0.5 alpha bg) or present with a clear window bg.
+@property(nonatomic) BOOL *shouldImitateModalTransition;
 
 // Allows the user to specify the text color for the picker
 - (void)setTextColor:(UIColor *)textColor;

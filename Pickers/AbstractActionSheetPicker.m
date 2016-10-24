@@ -683,8 +683,8 @@ CG_INLINE BOOL isIPhone4() {
         _actionSheet.bgView.backgroundColor = self.pickerBackgroundColor;
     }
     
-    if (self.presentationViewBackgroundColor) {
-        _actionSheet.presentationViewBgColor = self.pickerBackgroundColor;
+    if (self.shouldImitateModalTransition) {
+        _actionSheet.shouldImitateModalTransition = self.shouldImitateModalTransition;
     }
 
     [self presentActionSheet:_actionSheet];
