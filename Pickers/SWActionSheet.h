@@ -8,15 +8,13 @@
 
 @interface SWActionSheet : UIView
 @property(nonatomic, strong) UIView *bgView;
-@property(nonatomic, strong) UIColor *presentationViewBgColor;
+@property(nonatomic) BOOL shouldImitateModalTransition;
 
 - (void)dismissWithClickedButtonIndex:(int)i animated:(BOOL)animated;
 
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated;
 
 - (instancetype)initWithView:(UIView *)view;
-
-//- (instancetype)initWithView:(UIView *)aView andPresentationBgColor:(UIColor *)presentationViewBgColor;
 
 - (void)showInContainerView;
 @end
