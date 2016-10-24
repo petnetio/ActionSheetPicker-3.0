@@ -101,6 +101,17 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     return (SWActionSheetVC *) [self window].rootViewController;
 }
 
+//- (instancetype)initWithView:(UIView *)aView andPresentationBgColor:(UIColor *)presentationViewBgColor
+//{
+//    if ((self = [[SWActionSheet alloc] initWithView:aView]))
+//    {
+//        _presentationViewBgColor = presentationViewBgColor;
+//        self.backgroundColor = presentationViewBgColor;
+//    }
+//    
+//    return self;
+//}
+
 - (instancetype)initWithView:(UIView *)aView
 {
     if ((self = [super init]))
@@ -109,6 +120,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0f];
         _bgView = [UIView new];
         _bgView.backgroundColor = [UIColor colorWithRed:247.f/255.f green:247.f/255.f blue:247.f/255.f alpha:1.0f];
+        
         [self addSubview:_bgView];
         [self addSubview:view];
     }
@@ -148,7 +160,12 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
     // Present actions
     void (^animations)() = ^{
         self.center = toPoint;
-        self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.5f];
+        
+        if(_presentationViewBgColor) {
+            self.backgroundColor = _presentationViewBgColor;
+        } else {
+            self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.5f];
+        }
     };
     // Present sheet
     if (animated)
