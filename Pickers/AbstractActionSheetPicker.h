@@ -85,7 +85,7 @@ static NSString *const kActionTarget = @"buttonActionTarget";
 
 // Allows the user to decide whether to imitate a modal transition
 // (black, 0.5 alpha bg) or present with a clear window bg.
-@property(nonatomic) BOOL *shouldImitateModalTransition;
+@property(nonatomic) BOOL shouldImitateModalTransition;
 
 // Allows the user to specify the text color for the picker
 - (void)setTextColor:(UIColor *)textColor;
