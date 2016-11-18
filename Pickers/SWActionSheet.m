@@ -151,7 +151,7 @@ static const enum UIViewAnimationOptions options = UIViewAnimationOptionCurveEas
         self.center = toPoint;
         
         if(_shouldImitateModalTransition != NO) {
-            self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.5f];
+            self.backgroundColor = [UIColor colorWithWhite:1.f alpha:0.9f];
         } else {
             self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0];
         }
